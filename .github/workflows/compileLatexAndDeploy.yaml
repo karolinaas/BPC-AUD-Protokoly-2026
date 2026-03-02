@@ -32,19 +32,29 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: |
-            Document1/doc1.tex
-            Document2/doc2.tex
-            Document3/doc3.tex
-          latexmk_use_xelatex: true
+            uloha1/uloha1.tex
+            uloha2/uloha2.tex
+            uloha3/uloha3.tex
+            uloha4/uloha4.tex
+            uloha5/uloha5.tex
+            uloha6/uloha6.tex
+            uloha7/uloha7.tex
+            uloha8/uloha8.tex
+          latexmk_use_xelatex: false
           latexmk_shell_escape: true
           work_in_root_file_dir: true
           continue_on_error: true
       - name: Generate redirect page
         run: |
           mkdir public
-          mv Document1/doc1.pdf ./public/
-          mv Document2/doc2.pdf ./public/
-          mv Document3/doc3.pdf ./public/
+          mv uloha1/uloha1.pdf ./public/
+          mv uloha2/uloha2.pdf ./public/
+          mv uloha3/uloha3.pdf ./public/
+          mv uloha4/uloha4.pdf ./public/
+          mv uloha5/uloha5.pdf ./public/
+          mv uloha6/uloha6.pdf ./public/
+          mv uloha7/uloha7.pdf ./public/
+          mv uloha8/uloha8.pdf ./public/
           cat > ./public/index.html <<EOL
           <!doctype html>
           <html>
@@ -52,9 +62,14 @@ jobs:
               <title>Rozcestník</title>
             </head>
             <body>
-              <p><a href="./doc1.pdf">Document 1</a></p>
-              <p><a href="./doc2.pdf">Document 2</a></p>
-              <p><a href="./doc3.pdf">Document 3</a></p>
+              <p><a href="./uloha1.pdf">BPC-AUD Laboratorní úloha č.1</a></p>
+              <p><a href="./uloha2.pdf">BPC-AUD Laboratorní úloha č.2</a></p>
+              <p><a href="./uloha3.pdf">BPC-AUD Laboratorní úloha č.3</a></p>
+              <p><a href="./uloha4.pdf">BPC-AUD Laboratorní úloha č.4</a></p>
+              <p><a href="./uloha5.pdf">BPC-AUD Laboratorní úloha č.5</a></p>
+              <p><a href="./uloha6.pdf">BPC-AUD Laboratorní úloha č.6</a></p>
+              <p><a href="./uloha7.pdf">BPC-AUD Laboratorní úloha č.7</a></p>
+              <p><a href="./uloha8.pdf">BPC-AUD Laboratorní úloha č.8</a></p>
             </body>
           </html>
           EOL
