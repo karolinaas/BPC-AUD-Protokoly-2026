@@ -1,7 +1,15 @@
 \documentclass[a4paper, czech]{article}
 
-\title{Second document}
-\author{Šebestová}
+\title{
+    \begin{framed}
+        \setstretch{1.5}
+        {\large Audio elektronika (BPC/BKC-AUD)}\\
+        Laboratorní úloha č. 2 (protokol)\\
+        \textbf{Korekční audio zesilovač}
+    \end{framed}
+    }
+\author{Karolína A. Šebestová}
+\date{24. 2. 2026, 11:00}
 
 \usepackage[czech]{babel}
 \usepackage{indentfirst}
@@ -12,14 +20,239 @@
 \usepackage{amsmath}
 \usepackage{multirow}
 \usepackage{colortbl}
+\usepackage{framed} % \begin{framed}
+\usepackage{setspace} % \setstretch{}
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{xcolor}
+
+\sisetup{locale = DE}
 
 \begin{document}
 
 \maketitle
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Měření}
+
+\subsection{Měření modulové kmitočtové charakteristiky}
+
+\begin{equation}
+    A_\text{U} = \textcolor{teal}{20 \cdot \log \frac{U_2}{U_1}} = 20 \cdot \log \frac{553}{775} = \underline{\underline{-2,93\,\text{dB}}}
+\end{equation}
+
+\begin{table}[H]
+    \catcode`\-=12
+    \centering
+    \caption{Modulová kmitočtová charakteristika korekcí (U1 = 775 mV).}
+
+    \begin{tabular}{ccccccc}
+        \toprule
+        \multirow{3}{*}{\setstretch{3}$f$ [Hz]} & \multicolumn{6}{c}{Levý kanál}\\
+        \cmidrule(rl){2-7}
+        & \multicolumn{2}{c}{Lineární korekce} & \multicolumn{2}{c}{Korekce H+ a V+} & \multicolumn{2}{c}{Korekce H- a V-}\\
+        \cmidrule(rl){2-3}
+        \cmidrule(rl){4-5}
+        \cmidrule(rl){6-7}
+        & $U_2$ [mV] & $A_\text{U}$ [dB] & $U_2$ [mV] & $A_\text{U}$ [dB] & $U_2$ [mV] & $A_\text{U}$ [dB] \\
+        \cmidrule(rl){1-7}
+        20    & 553 & -2,93 & 2450 & 10,00 & 78  & -19,64 \\
+        30    & 615 & -2,01 & 3540 & 13,19 & 92  & -18,51 \\
+        50    & 666 & -1,32 & 4330 & 14,94 & 117 & -16,42 \\
+        70    & 692 & -0,98 & 3960 & 14,17 & 145 & -14,56 \\
+        100   & 717 & -0,68 & 3140 & 12,15 & 189 & -12,26 \\
+        200   & 753 & -0,25 & 1750 & 7,07  & 337 & -7,23 \\
+        300   & 765 & -0,11 & 1260 & 4,22  & 468 & -4,38 \\
+        500   & 771 & -0,04 & 911  & 1,40  & 653 & -1,49  \\
+        700   & 774 & -0,01 & 804  & 0,32  & 745 & -0,34  \\
+        1000  & 775 & 0,00  & 775  & 0,00  & 775 & 0,00   \\
+        2000  & 769 & -0,07 & 955  & 1,81  & 619 & -1,95  \\
+        3000  & 758 & -0,19 & 1210 & 3,87  & 473 & -4,29 \\
+        5000  & 732 & -0,50 & 1680 & 6,72  & 319 & -7,71 \\
+        7000  & 711 & -0,75 & 2030 & 8,36  & 249 & -9,86 \\
+        10000 & 692 & -0,98 & 2390 & 9,78  & 201 & -11,72 \\
+        20000 & 669 & -1,28 & 2860 & 11,34 & 158 & -13,81 \\
+        30000 & 664 & -1,34 & 2990 & 11,73 & 149 & -14,32 \\
+        50000 & 662 & -1,37 & 3070 & 11,96 & 144 & -14,62 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Sestrojení modulové kmitočtové charakteristiky}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{grafy/graf1.pdf}
+    \caption{Modulová kmitočtová charakteristika měřených korekcí zesilovače.}
+\end{figure}
+
+\subsection{Měření závislosti regulace hlasitosti}
+
+\begin{table}[H]
+    \catcode`\-=12
+    \centering
+    \caption{Závislost regulace hlasitosti korekčního zesilovače ($U_1 = $ 775\,mV, $f$ = 1\,kHz).}
+    \begin{tabular}{ccccc}
+        \toprule
+        \multirow{2}{*}{\setstretch{2}Hlasitost} & \multicolumn{4}{c}{Levý kanál} \\
+        \cmidrule(rl){2-5}
+        & $U_2$ [mV] & $A_\text{U}$ [dB] & $U_{2\,\text{Loud}}$ [mV] & $A_\text{U}$ [dB] \\
+        \cmidrule(rl){1-5}
+        1  & 0,014 & -94,86 & 0,013 & -95,51 \\
+        2  & 2,03  & -51,64 & 0,104 & -77,45 \\
+        3  & 7,79  & -39,96 & 0,579 & -62,53 \\
+        4  & 53,3  & -23,25 & 386   & -6,05  \\
+        5  & 121   & -16,13 & 8,76  & -38,94 \\
+        6  & 194   & -12,03 & 14,5  & -34,56 \\
+        7  & 245   & -10,00 & 54,9  & -22,99 \\
+        8  & 342   & -7,11  & 183   & -12,54 \\
+        9  & 595   & -2,30  & 479   & -4,18  \\
+        10 & 866   & 0,96   & 805   & 0,33   \\
+        11 & 932   & 1,60   & 914   & 1,43   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Měření frekvenční závislosti funkce fyziologické regulace hlasitosti}
+
+\begin{table}[H]
+    \catcode`\-=12
+    \centering
+    \caption{Závislost regulace hlasitosti korekčního zesilovače ($U_1$ = 775\,mV).}
+    \begin{tabular}{ccccc}
+        \toprule
+        \multirow{2}{*}{\setstretch{2}$f$[Hz]} & \multicolumn{2}{c}{Lineární regulace} & \multicolumn{2}{c}{Loundness} \\
+        \cmidrule(rl){2-3}
+        \cmidrule(rl){4-5}
+        & $U_2$ [mV] & $A_\text{U}$ [dB] & $U_2$ [mV] & $A_\text{U}$ [dB] \\
+        \cmidrule(rl){1-5}
+        20    & 149 & -14,32 & 192 & -12,12 \\
+        30    & 165 & -13,44 & 202 & -11,68 \\
+        50    & 177 & -12,83 & 201 & -11,72 \\
+        70    & 182 & -12,58 & 198 & -11,85 \\
+        100   & 188 & -12,30 & 196 & -11,94 \\
+        200   & 195 & -11,99 & 197 & -11,90 \\
+        300   & 197 & -11,90 & 198 & -11,85 \\
+        500   & 199 & -11,81 & 199 & -11,81 \\
+        700   & 199 & -11,81 & 199 & -11,81 \\
+        1000  & 200 & -11,77 & 200 & -11,77 \\
+        2000  & 198 & -11,85 & 199 & -11,81 \\
+        3000  & 195 & -11,99 & 197 & -11,90 \\
+        5000  & 188 & -12,30 & 193 & -12,07 \\
+        7000  & 183 & -12,54 & 190 & -12,21 \\
+        10000 & 178 & -12,78 & 187 & -12,35 \\
+        20000 & 172 & -13,08 & 183 & -12,54 \\
+        30000 & 171 & -13,13 & 183 & -12,54 \\
+        50000 & 170 & -13,18 & 182 & -12,58 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Sestrojení modulové kmitočtové charakteristiky}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{grafy/graf2.pdf}
+    \caption{Modulová kmitočtová charakteristika regulací hlasitosti.}
+\end{figure}
+
+
+\subsection{Měření závislosti regulace vyvážení}
+
+\begin{table}[H]
+    \catcode`\-=12
+    \centering
+    \caption{Závislost regulace hlasitosti korekčního zesilovače ($U_1$ = 775\,mV).}
+
+    \begin{tabular}{ccccc}
+        \toprule
+        \multirow{2}{*}{\setstretch{2}Vyvážení} & \multicolumn{2}{c}{Levý kanál} & \multicolumn{2}{c}{Pravý kanál} \\
+        \cmidrule(rl){2-3}
+        \cmidrule(rl){4-5}
+        & $U_{2\text{L}}$ [mV] & $A_\text{U}$ [dB] & $U_{2\text{P}}$ [mV] & $A_\text{U}$ [dB] \\
+        \cmidrule(rl){1-5}
+
+        -5 & 797 & 0,24   & 213 & -11,22 \\
+        -4 & 797 & 0,24   & 481 & -4,14  \\
+        -3 & 797 & 0,24   & 679 & -1,15  \\
+        -2 & 788 & 0,14   & 733 & -0,48  \\
+        -1 & 782 & 0,08   & 759 & -0,18  \\
+        0  & 775 & 0,00   & 775 & 0,00   \\
+        1  & 762 & -0,15  & 787 & 0,13   \\
+        2  & 741 & -0,39  & 795 & 0,22   \\
+        3  & 699 & -0,90  & 800 & 0,28   \\
+        4  & 580 & -2,52  & 80  & -19,72 \\
+        5  & 210 & -11,34 & 808 & 0,36   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Měření přeslechů signálu mezi kanály}
+
+\begin{table}[H]
+    \catcode`\-=12
+    \centering
+    \caption{Přeslechy korekčního zesilovače ($U_1$ = 775\,mV, $f$ = 1\,kHz).}
+
+    \begin{tabular}{ccccc}
+        \toprule
+        \multirow{2}{*}{\setstretch{2}$f$ [Hz]} & \multicolumn{2}{c}{Levý kanál $U_1 \rightarrow$ Pravý kanál} & \multicolumn{2}{c}{Pravý kanál $U_1 \rightarrow$ Levý kanál} \\
+        \cmidrule(rl){2-3}
+        \cmidrule(rl){4-5}
+        & $U_{2\text{P}}$ [mV] & Přeslech [dB] & $U_{2\text{L}}$ [mV] & Přeslech [dB] \\
+        \cmidrule(rl){1-5}
+
+        100   & 0,923 & -58,48 & 0,977 & -57,99 \\
+        1000  & 0,965 & -58,10 & 1,04  & -57,45 \\
+        10000 & 0,815 & -59,56 & 1,1   & -56,96 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Určení vstupního odporu přípravku}
+
+Vstupní odpor $R_{\text{vst}\, L} = 29\,\text{k}\Omega$
+
+Vstupní odpor $R_{\text{vst}\, P} = 29\,\text{k}\Omega$
+
+\subsection{Měření harmonického zkreslení}
+
+\begin{table}[H]
+    \catcode`\-=12
+    \centering
+    \caption{Harmonické zkreslení korekčního zesilovače ($U_1$ = 775\,mV, $f$ = 1\,kHz).}
+
+    \begin{tabular}{ccccc}
+        \toprule
+        Kanál & $U_2$ [mV] & $k_2$ [\%] & $k_3$ [\%] & $THD+N$ [\%] \\
+        \cmidrule(rl){1-5}
+        Levý  & 775     & 0.0075  & 0,0023  & 0,0022     \\
+        Pravý & 775     & 0,0075  & 0,0023  & 0,0025     \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Použité měřící přístroje}
+
+\begin{itemize}
+    \item \textbf{GEN} nízkofrekvenční funkční generátor Agilent 33220A
+    \item \textbf{NMV} nízkofrekvenční milivoltmetr Grundig MV100
+    \item \textbf{OSC} digitální osciloskop Agilent 54621A
+    \item \textbf{NZ} napájecí zdroj MCP M10-DP-305E (napájení přípravku $\pm$ 25V)
+    \item měřený přípravek „Korekční nízkofrekvenční zesilovač“
+    \item vstupní cejchovaný proměnný odpor 100 k$\Omega$
+    \item propojovací vodiče 4 x BNC-BNC, 1 x rozbočovací „T člen“
+\end{itemize}
+
+\section{Závěr}
+
+Naměřené hodnoty při maximálním zdůraznění hloubek a výšek dosahují maxima 14,94\,dB při kmitočtu 50\,Hz s poklesem v nižších kmitočtech, minimum nabývá při kmitočtu 1 kHz, následně charakteristika stoupá až do maximální měřené hodnoty kmitočtu, tedy 50\,kHz.
+Při nastavení potlačení hloubek a výšek je maximální potlačení -19,64\,dB v nízkých kmitočtech a v těch vysokých zase -14,62\,dB.
+
+Naměřené závislosti hlasitosti odpovídají našim teoretickým předpokladům.
+
+Přeslechy mezi pravým a levým kanálem se nacházejí pod hladinou -55\,dB s pozorovatelnou klesající tendencí v závislosti na rostoucí frekvenci při přeslechu z levého na pravý kanál.
+V opačném směru jsme tuto tendenci nepozorovali.
+
+Vstupní odpory přípravku jsou pro oba kanály shodné a to právě 29\,k$\Omega$, téměř shodné je také celkové harmonické zkreslení $THD+N$ s velmi malou hodnotou 0,022\,\% a 0,025\,\%.
 
 \end{document}
