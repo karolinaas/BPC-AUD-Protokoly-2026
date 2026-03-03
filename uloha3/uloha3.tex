@@ -71,6 +71,14 @@
     \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{grafy/graf1.pdf}
+    \caption{Modulová kmitočtová charakteristika koncového zesilovače ve třídě T.}
+\end{figure}
+
+Přibližná šířka pásma zesilovače $B = 52490\,\text{Hz}$.
+
 \subsection{Měření maximálního výstupního výkonu pro limitaci}
 
 $U_{\text{výst}} = 5,81\,\text{V}$
@@ -147,6 +155,13 @@ Rychlost přeběhu sestupné hrany $SR_\text{fall} = 2,16\,\text{V/}\mu\text{s}\
     \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{grafy/graf2.pdf}
+    \caption{Měření harmonického zkreslení na výstupním výkonu.}
+\end{figure}
+
+
 \section{Použité měřící přístroje}
 
 \begin{itemize}
@@ -162,5 +177,24 @@ Rychlost přeběhu sestupné hrany $SR_\text{fall} = 2,16\,\text{V/}\mu\text{s}\
 
 \section{Závěr}
 
+Dolní pokles o 3\,dB nelze z naměřené modulové kmitočtové charakteristiky odečíst.
+Odečetli jsme ho proto odhadem.
+Horní pokles o 3\,dB se nachází v oblasti 50 kHz a 100 kHz, získání přesnější hodnoty by vyžadovalo větší množství měření v dané oblasti.
+Zesilovač v propustné oblasti zesiluje přibližně kolem 21\,dB.
+
+Maximální výstupní výkon zesilovače v lineární oblasti je 4,22\,W.
+Z této hodnoty jsme vypočetli účinnost 69,53\,\%.
+
+Vstupní odpor zesilovače při kmitočtu 1\,kHz je 22\,k$\Omega$.
+Poté byl vypočítán i výstupní odpor zesilovače 0,81\,$\Omega$.
+Zesilovač má velký vstupní a malý výstupní odpor, pracuje proto tedy jako zdroj napětí.
+Činitel tlumení zátěže je 9,82 a odpovídá tedy teoretickým předpokladům.
+
+Zesilovač reaguje na náběžnou hranu s rychlostí 1,92\,$\text{V/}\mu\text{s}$ a na sestupnou s rychlostí 2,16\,$\text{V/}\mu\text{s}$.
+Měření bylo pro vyšší přesnost provedeno manuálně pomocí kurzorů na osciloskopu.
+
+Harmonické zkreslení $THD+N$ se začíná projevovat po hodnotě výkonu 5\,W.
+Hodnoty $k_2$ a $k_3$ se však drží pod hodnotou 1\,\% i pro vyšší výstupní výkon.
+Zkreslení vlastního generátoru splňuje podmínku pro poměr k výsledné hodnotě $THD+N$.
 
 \end{document}
