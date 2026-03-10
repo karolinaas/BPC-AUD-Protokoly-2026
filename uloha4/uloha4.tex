@@ -1,7 +1,15 @@
 \documentclass[a4paper, czech]{article}
 
-\title{Third document}
-\author{Šebestová}
+\title{
+    \begin{framed}
+        \setstretch{1.5}
+        {\large Audio elektronika (BPC/BKC-AUD)}\\
+        Laboratorní úloha č. 4 (protokol)\\
+        \textbf{Aktivní výhybka pro dva satelity a subwoofer}
+    \end{framed}
+    }
+\author{Karolína A. Šebestová}
+\date{10. 4. 2026, 11:00}
 
 \usepackage[czech]{babel}
 \usepackage{indentfirst}
@@ -12,14 +20,49 @@
 \usepackage{amsmath}
 \usepackage{multirow}
 \usepackage{colortbl}
+\usepackage{framed} % \begin{framed}
+\usepackage{setspace} % \setstretch{}
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{xcolor}
+
+\sisetup{locale = DE}
 
 \begin{document}
 
 \maketitle
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Měření}
+
+\subsection{Měření modulové kmitočtové charakteristiky lineárního nefiltrovaného výstupu.}
+
+
+
+\subsection{Měření modulové kmitočtové charakteristiky horní propusti pro levý satelit}
+
+
+
+\subsection{Měření průběhu zesílení subwooferu v závislosti na nastavení přepínače zesílení}
+
+
+
+\subsection{Měření modulové kmitočtové charakteristiky výstupu pro subwoofer.}
+
+
+
+\section{Použité měřící přístroje}
+
+\begin{itemize}
+    \item \textbf{GEN} nízkofrekvenční funkční generátor Agilent 33220A
+    \item \textbf{OSC} digitální osciloskop Agilent DSO3102A 100 MHz
+    \item \textbf{NZ} napájecí zdroj MCP M10-DP-305E (napájení přípravku $\pm$ 15V)
+    \item \textbf{NMV} nízkofrekvenční milivoltmetr Grundig MV100
+    \item měřený přípravek „Přesaditelná aktivní výhybka pro subwoofer a satelity“
+    \item propojovací vodiče 4 x BNC-BNC
+    \item 2 x rozbočovací „T člen“ BNC
+\end{itemize}
+
+\section{Závěr}
+
 
 \end{document}
