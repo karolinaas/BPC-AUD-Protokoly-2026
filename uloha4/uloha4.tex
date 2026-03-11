@@ -36,6 +36,10 @@
 
 \subsection{Měření modulové kmitočtové charakteristiky lineárního nefiltrovaného výstupu.}
 
+\begin{equation}
+    A_\text{U} = \textcolor{teal}{20 \cdot \log \frac{U_2}{U_1}} = 20 \cdot \log \frac{370}{500} = \underline{\underline{-2{,}62\,\text{dB}}}
+\end{equation}
+
 \begin{table}[H]
     \catcode`\-=12
     \centering
@@ -105,6 +109,18 @@
     \includegraphics[width=\textwidth]{grafy/graf2.pdf}
     \caption{Modulová kmitočtová charakteristika horní propusti}
 \end{figure}
+
+$f_{m80} = 93,7\,\text{Hz}$
+
+$f_{m120} = 178,6\,\text{Hz}$
+
+$f_{m160} = 205,1\,\text{Hz}$
+
+$S_{80} = 63,0\,\text{dB/dek}$
+
+$S_{160} = 60,0\,\text{dB/dek}$
+
+$S_{120}$ nebylo možné určit, protože charakteristika není lineární.
 
 \subsection{Měření průběhu zesílení subwooferu v závislosti na nastavení přepínače zesílení}
 
@@ -182,5 +198,22 @@
 
 \section{Závěr}
 
+V prvním bodě měření byla změřena modulová kmitočtová charakteristika lineárního nefiltrovaného výstupu.
+Charakteristika se linearizuje přibližně od kmitočtu 100\,Hz.
+
+Ve druhém bodě měření byla proměřena modulová kmitočtová charakteristika horní propusti pro satelit pro všechny tři nastavitelné mezní kmitočty.
+Naměřené mezní kmitočty se od nastavených hodnot liší. Pro $f_m = 80$\,Hz byl naměřen mezní kmitočet 93{,}7\,Hz (odchylka $+13{,}7$\,Hz), pro $f_m = 120$\,Hz bylo naměřeno 178{,}6\,Hz (odchylka $+58{,}6$\,Hz) a pro $f_m = 160$\,Hz bylo naměřeno 205{,}1\,Hz (odchylka $+45{,}1$\,Hz).
+Největší odchylka nastala pro $f_m = 120$\,Hz, přičemž charakteristika v tomto případě nebyla lineární a strmost nebylo možné určit.
+Použité Besselovy filtry třetího řádu by měly dosahovat strmosti 60\,dB/dek (18\,dB/okt); naměřená strmost pro $f_m = 80$\,Hz je 63\,dB/dek, pro $f_m = 160$\,Hz odpovídá teoretické hodnotě 60\,dB/dek.
+Odchylky mohou být způsobeny tolerancí součástek nebo nepřesností měřicích přístrojů.
+
+Ve třetím bodě měření byla proměřena závislost zesílení subwooferu na nastavení přepínače zesílení.
+Naměřené hodnoty velmi těsně kopírují nastavené hodnoty, maximální odchylka činí pouze 0{,}12\,dB.
+Závislost je lineární bez výraznějších odchylek.
+
+Ve čtvrtém bodě měření byla proměřena modulová kmitočtová charakteristika dolní propusti výstupu pro subwoofer pro všechny tři nastavitelné mezní kmitočty.
+Naměřené mezní kmitočty se od nastavených hodnot liší méně než v případě horní propusti -- odečtené hodnoty jsou přibližně 75{,}0\,Hz, 108{,}2\,Hz a 156{,}7\,Hz pro nastavené $f_m = 80$, 120 a 160\,Hz.
+Odečtené strmosti ($-58$, $-56$ a $-54$\,dB/dek) se od teoretické hodnoty 60\,dB/dek pro Besselův filtr třetího řádu liší o 2 až 6\,dB/dek.
+Tyto odchylky mohou být opět způsobeny tolerancí součástek nebo měřicích přístrojů.
 
 \end{document}
