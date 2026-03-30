@@ -169,4 +169,42 @@
 
 \section{Závěr}
 
+\begin{enumerate}
+
+\item Při snižování stupně konverze z 8 na 3 bity bylo možné pozorovat postupné zhoršování tvaru výstupního signálu.
+Při 8\,bitovém rozlišení byl výstupní průběh prakticky shodný se vstupním.
+Se snižujícím se počtem kvantizačních hladin se výstupní průběh postupně zkresloval do schodovitého tvaru.
+
+\item Snížení vzorkovacího kmitočtu z \SI{44}{kHz} přibližně na \SI{5}{kHz} při zachování 8\,bitového rozlišení mělo vizuálně podobný efekt jako snížení bitové hloubky, výstupní signál vykazoval schodovité zkreslení.
+Příčinou zde však není nízký počet kvantizačních hladin, ale nedostatečný počet vzorků na periodu vstupního signálu.
+
+\item Výstupní rekonstrukční filtr prokázal schopnost věrně rekonstruovat harmonický signál o frekvenci blízké $f_{vz}/2$, konkrétně při $f_1 = \SI{9}{kHz}$.
+Bez filtru se na výstupu projevovaly nespojitosti způsobené D/A převodem, výstupní průběh byl výrazně zkreslený.
+Po zapnutí filtru byl výstupní signál vyhlazený a tvarem blízký vstupní sinusoidě.
+
+\item Degradace harmonického signálu na signál obdélníkový nastala při výrazném snížení amplitudy vstupního signálu při 3\,bitovém rozlišení.
+Nízká úroveň vstupního napětí nepostačovala k využití vyšších kvantizačních hladin a výstupní signál přepínal pouze mezi dvěma krajními hladinami, čímž vznikl obdélníkový průběh.
+
+\item Vizualizace kvantizačního zkreslení jako rozdílu vstupního a výstupního signálu potvrdila, že jeho velikost klesá s rostoucím počtem bitů.
+Při 3\,bitovém rozlišení bylo zkreslení největší a projevovalo se výraznými schodovitými přechody.
+Se zvyšujícím se počtem bitů (4, 6, 8) se kvantizační šum postupně snižoval, při 8\,bitovém rozlišení byl již prakticky zanedbatelný oproti vstupnímu signálu.
+
+\item Granulační zkreslení bylo pozorováno při velmi nízké úrovni vstupního signálu v kombinaci se 3\,bitovým rozlišením.
+Projevovalo se náhodnými přeskoky výstupního signálu mezi první a nultou kvantizační hladinou v okamžiku, kdy amplituda oscilovala těsně v blízkosti hranice kvantizační hladiny.
+
+\item Zákmity na hranách výstupního signálu z D/A převodníku byly patrné po časovém roztažení průběhu.
+Zákmity jsou způsobeny konečnou rychlostí přeběhu a dobou upnutí výstupního stupně při skokovém přechodu mezi kvantizačními hladinami.
+
+\item Rozšíření kmitočtového spektra vlivem nedodržení Shannon-Kotělníkova teorému bylo ověřeno snížením vzorkovacího kmitočtu.
+Při dodržení teorému ($f_1 < f_{vz}/2$) bylo spektrum výstupního signálu čisté s dominantní složkou na kmitočtu vstupního signálu.
+Po snížení $f_{vz}$ pod hodnotu $2 f_1$ se ve spektru objevily aliasové složky a spektrum se rozšiřovalo.
+Zapnutím vstupního (antialiasingového) filtru bylo možné ověřit, že zkreslení vzniká přímo v převodníku, nikoli na vstupu.
+
+\item Vznik aliasingu byl demonstrován překročením kmitočtu vstupního signálu přes $f_{vz}/2$.
+V časové oblasti bylo možné pozorovat výstupní signál s rozdílovým kmitočtem $f_2 = f_{vz} - f_1$, v kmitočtové oblasti pak dochází k překrytí sousedních period spektra.
+Míra aliasingu se zvyšovala s rostoucím kmitočtem vstupního signálu při zachování fixního vzorkovacího kmitočtu.
+Zachycení obou průběhů zasynchronizovaných na osciloskopu se nepodařilo.
+
+\end{enumerate}
+
 \end{document}
