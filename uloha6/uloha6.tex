@@ -1,7 +1,15 @@
 \documentclass[a4paper, czech]{article}
 
-\title{Third document}
-\author{Šebestová}
+\title{
+	\begin{framed}
+		\setstretch{1.5}
+		{\large Audio elektronika (BPC/BKC-AUD)}\\
+		Laboratorní úloha č. 6 (protokol)\\
+		\textbf{Digitální zpracování nízkofrekvenčního signálu}
+	\end{framed}
+	}
+\author{Karolína A. Šebestová}
+\date{24. 3. 2026, 11:00}
 
 \usepackage[czech]{babel}
 \usepackage{indentfirst}
@@ -12,14 +20,31 @@
 \usepackage{amsmath}
 \usepackage{multirow}
 \usepackage{colortbl}
+\usepackage{framed} % \begin{framed}
+\usepackage{setspace} % \setstretch{}
+\usepackage{siunitx}
+\usepackage{xcolor}
+
+\sisetup{locale = DE}
+
 
 \begin{document}
 
 \maketitle
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Měření}
+
+\section{Použité měřící přístroje}
+
+\begin{itemize}
+    \item \textbf{GEN} nízkofrekvenční funkční generátor Digimess FG100
+    \item \textbf{OSC} paměťový osciloskop HP 54603A 60 MHz
+    \item \textbf{NZ} napájecí zdroj Diametral (napájení $\pm$ 15V, +5V)
+    \item \textbf{LPT} tiskárna HP 5L připojená k osciloskopu
+    \item měřený přípravek „Digitální zpracování nízkofrekvenčních signálů“
+    \item propojovací vodiče 3 x BNC – BNC, 1 x rozbočovací „T člen“
+\end{itemize}
+
+\section{Závěr}
 
 \end{document}
