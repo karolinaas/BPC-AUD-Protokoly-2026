@@ -81,21 +81,25 @@
     \end{tabular}
 \end{table}
 
+\begin{equation}
+    A_1 = \textcolor{teal}{20 \cdot \log \frac{U_{21}}{U_1}} = 20 \cdot \log \frac{853}{962} = \underline{\underline{-1{,}04\,\text{dB}}}
+\end{equation}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{grafy/graf1.pdf}
+    \includegraphics[width=0.7\textwidth]{grafy/graf1.pdf}
     \caption{Modulová kmitočtová charakteristika při zdůraznění hloubek ekvalizeru.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{grafy/graf2.pdf}
+    \includegraphics[width=0.7\textwidth]{grafy/graf2.pdf}
     \caption{Modulová kmitočtová charakteristika při zdůraznění výšek ekvalizeru.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{grafy/graf3.pdf}
+    \includegraphics[width=0.7\textwidth]{grafy/graf3.pdf}
     \caption{Modulová kmitočtová charakteristika při vlastním nastavení ekvalizeru.}
 \end{figure}
 
@@ -120,19 +124,19 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{grafy/graf4.pdf}
+    \includegraphics[width=0.7\textwidth]{grafy/graf4.pdf}
     \caption{Převodní charakteristika pro vypnutý limiter.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{grafy/graf5.pdf}
+    \includegraphics[width=0.7\textwidth]{grafy/graf5.pdf}
     \caption{Převodní charakteristika pro přednastavenou kompresní křivku „compress2“.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{grafy/graf6.pdf}
+    \includegraphics[width=0.7\textwidth]{grafy/graf6.pdf}
     \caption{Převodní charakteristika pro vlastní nastavení – limitaci.}
 \end{figure}
 
@@ -140,7 +144,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=\textwidth, angle=90]{osciloskop/5_automaticka_kmit_char.pdf}
+    \includegraphics[height=0.7\textwidth, angle=90]{osciloskop/5_automaticka_kmit_char.pdf}
     \caption{Automatické měření kmitočtové charakteristiky.}
 \end{figure}
 
@@ -148,7 +152,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=\textwidth, angle=90]{osciloskop/6_kontrola_faze.pdf}
+    \includegraphics[height=0.7\textwidth, angle=90]{osciloskop/6_kontrola_faze.pdf}
     \caption{Kontrola fáze.}
 \end{figure}
 
@@ -165,5 +169,18 @@
 \end{itemize}
 
 \section{Závěr}
+
+V první části úlohy byly změřeny modulové kmitočtové charakteristiky pro tři nastavení ekvalizeru.
+Při zdůraznění hloubek (charakteristika $A_1$) bylo nejvyšší zesílení naměřeno $4{,}52\,\text{dB}$ při $200\,\text{Hz}$, zatímco na vysokých kmitočtech přechází přenos do útlumu až na $-1{,}78\,\text{dB}$ při $20\,\text{kHz}$.
+Při zdůraznění výšek (charakteristika $A_2$) se naopak projevil útlum nízkých kmitočtů (minimum $-2{,}20\,\text{dB}$ při $20\,\text{Hz}$) a zesílení ve vyšší části pásma (maximum $3{,}89\,\text{dB}$ při $3{,}15\,\text{kHz}$).
+Vlastní nastavení (charakteristika $A_3$) dosahovalo maxima $3{,}68\,\text{dB}$ při $800\,\text{Hz}$ a minima $-2{,}17\,\text{dB}$ při $20\,\text{Hz}$.
+
+V další části byla změřena převodní charakteristika limiteru.
+Při vypnutém limiteru byl průběh přenosu téměř lineární (např. pro $U_1 = 1790\,\text{mV}$ vychází $U_{21} = 1480\,\text{mV}$).
+U přednastavené kompresní křivky byl nárůst výstupního napětí menší ($U_{22} = 599\,\text{mV}$ při $U_1 = 1790\,\text{mV}$).
+U vlastního nastavení limitace se výstup prakticky omezil na přibližně konstantní úroveň kolem $280$ až $290\,\text{mV}$ ($U_{23} = 281\,\text{mV}$ při $U_1 = 1790\,\text{mV}$).
+
+Automatické měření kmitočtové charakteristiky pomocí audio analyzátoru potvrdilo průběh charakteristiky odpovídající ručně naměřeným datům.
+Při kontrole fáze byly průběhy obou kanálů vzájemně shodné, takže měření fáze proběhlo úspěšně.
 
 \end{document}
