@@ -179,9 +179,34 @@ $$S = 2,075\,\mathrm{V}$$
     \item \textbf{APA} audio analyzátor Audio Precision Portable One
     \item \textbf{OSC} digitální osciloskop Tektronix TDS 2014
     \item \textbf{CDR} měřený CD rekordér Philips CDR 796
-    \item propojovací vodiče 2x CINCH – BNC, 2 x rozbočovací „T člen", 4 x XLR - CINCH
+    \item propojovací vodiče 2x CINCH - BNC, 2 x rozbočovací „T člen", 4 x XLR - CINCH
 \end{itemize}
 
 \section{Závěr}
+
+Naměřená modulová kmitočtová charakteristika je velmi vyrovnaná, v celém měřeném pásmu 20\,Hz až 20\,kHz se přenos pohybuje v rozmezí $-0{,}061$ až $-0{,}630$\,dB.
+K výraznějšímu poklesu dochází až na nejvyšších kmitočtech, maximální útlum $-0{,}630$\,dB byl naměřen při 20\,kHz.
+Mezní kmitočty při poklesu o $-3$\,dB nebylo možné odečíst.
+
+Výsledek kontroly fáze kanálů přehrávače můžeme pozorovat na obrázku 2.
+Potvrdilo se, že oba kanály mají shodnou polaritu. Na osciloskopu byly pozorovány vzájemně shodné sinusové průběhy s vynechanou každou sudou periodou.
+
+V úloze 3 jsme měřili separaci kanálů přehrávače (tabulka 2).
+Naměřené hodnoty se pohybují v rozmezí $-66{,}66$ až $-68{,}05$\,dB.
+Lze pozorovat, že s rostoucím kmitočtem se separace mírně zhoršuje (od $-68{,}05$\,dB při 100\,Hz po $-66{,}66$\,dB při 20\,kHz).
+
+Výsledek kontroly linearity D/A převodníku lze pozorovat na obrázku 3.
+Převodní charakteristika má lineární charakter v rozsahu $U_1 = 0$ až $-20$\,dB, kde se naměřené hodnoty obou kanálů velmi dobře shodují se vstupní úrovní.
+Při nižších úrovních ($-60$ až $-90$\,dB) dochází k odchylkám od linearity, například pro $U_1 = -90$\,dB bylo naměřeno pouze $-68{,}32$\,dB (L) a $-67{,}92$\,dB (R).
+Toto může být způsobeno nelinearitou převodníku nebo nepřesností měření velmi malých hodnot napětí.
+Kanály přehrávače se od sebe liší minimálně.
+
+Dále jsme měřili odstup signálu od šumu (S/N) přehrávače.
+Odstup signálu od šumu nám v absolutní hodnotě vyšel $S/N = 2593{,}75$, respektive $68{,}28$\,dB v~logaritmické míře.
+Šum by tedy neměl výrazně proniknout do užitečného signálu.
+
+V poslední úloze jsme měřili závislost harmonického zkreslení THD na úrovni signálu (obrázek 4).
+Naměřené hodnoty harmonického zkreslení se pohybují v tisícinách až setinách procenta, od 0,0022\,\% při plné úrovni ($U_1 = 0$\,dB) po 0,0196\,\% při $U_1 = -20$\,dB, naměřené zkreslení je tedy velmi malé.
+Pro slabší signál než $-20$\,dB zkreslení nebylo možné změřit, protože signál již nebylo možné dostatečně odlišit od šumu.
 
 \end{document}
