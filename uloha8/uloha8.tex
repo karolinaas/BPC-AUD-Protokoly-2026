@@ -63,10 +63,16 @@
         18    & 250        & 0,992      & -0,070      & 34    & 10\,000      & 0,979      & -0,184      \\
         19    & 315        & 0,992      & -0,070      & 35    & 12\,500      & 0,973      & -0,238      \\
         20    & 400        & 0,992      & -0,070      & 36    & 16\,000      & 0,958      & -0,373      \\
-        21    & 500        & 0,992      & -0,070      & 37    & 20\,000      & 0,930      & -0,630     \\
+        21    & 500        & 0,992      & -0,070      & 37    & 20\,000      & 0,930      & -0,630      \\
     \bottomrule
     \end{tabular}
 \end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{grafy/graf1.pdf}
+    \caption{Modulová kmitočtová charakteristika CD přehrávače.}
+\end{figure}
 
 \subsection{Kontrola fáze (polarity) obou kanálů CD přehrávače.}
 
@@ -111,7 +117,25 @@
     \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{grafy/graf2.pdf}
+    \caption{Linearita D/A převodníku CD přehrávače ($f=1\,$kHz).}
+\end{figure}
+
 \subsection{Měření odstupu signálu od šumu S/N.}
+
+$$N = 800\,\mathrm{\mu V}$$
+
+$$S = 2,075\,\mathrm{V}$$
+
+\begin{equation}
+    S/N = \frac{S}{N} = \frac{2,075}{800 \cdot 10^{-6}} = \underline{\underline{2593,75}}\ \text{(absolutní hodnota)}
+\end{equation}
+
+\begin{equation}
+    S/N = 20 \cdot \log \frac{S}{N} = 20 \cdot \log \frac{2,075}{800 \cdot 10^{-6}} = \underline{\underline{66,28\,\text{dB}}}\ \text{(v logaritmické míře)}
+\end{equation}
 
 \subsection{Měření harmonického zkreslení THD v závislosti na úrovni signál.}
 
@@ -135,6 +159,12 @@
         \bottomrule
     \end{tabular}
 \end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{grafy/graf3.pdf}
+    \caption{Závislost harmonického zkreslení na vstupním napětí.}
+\end{figure}
 
 \section{Použité měřící přístroje}
 
