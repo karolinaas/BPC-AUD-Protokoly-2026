@@ -62,14 +62,14 @@ jobs:
               <title>Rozcestník</title>
             </head>
             <body>
-              <p><a href="./uloha1.pdf">BPC-AUD Laboratorní úloha č.1</a></p>
-              <p><a href="./uloha2.pdf">BPC-AUD Laboratorní úloha č.2</a></p>
-              <p><a href="./uloha3.pdf">BPC-AUD Laboratorní úloha č.3</a></p>
-              <p><a href="./uloha4.pdf">BPC-AUD Laboratorní úloha č.4</a></p>
-              <p><a href="./uloha5.pdf">BPC-AUD Laboratorní úloha č.5</a></p>
-              <p><a href="./uloha6.pdf">BPC-AUD Laboratorní úloha č.6</a></p>
-              <p><a href="./uloha7.pdf">BPC-AUD Laboratorní úloha č.7</a></p>
-              <p><a href="./uloha8.pdf">BPC-AUD Laboratorní úloha č.8</a></p>
+              <p><a href="./uloha1.pdf">Úloha č.1: Vstupní nízkofrekvenční zesilovač</a></p>
+              <p><a href="./uloha2.pdf">Úloha č.2: Korekční audio zesilovač</a></p>
+              <p><a href="./uloha3.pdf">Úloha č.3: Koncový audio zesilovač ve třídě T</a></p>
+              <p><a href="./uloha4.pdf">Úloha č.4: Aktivní výhybka pro dva satelity a subwoofer</a></p>
+              <p><a href="./uloha5.pdf">Úloha č.5: Princip koncového zesilovače s PWM modulací</a></p>
+              <p><a href="./uloha6.pdf">Úloha č.6: Digitální zpracování nízkofrekvenčního signálu</a></p>
+              <p><a href="./uloha7.pdf">Úloha č.7: Digitální vícepásmový ekvalizer a limiter</a></p>
+              <p><a href="./uloha8.pdf">Úloha č.8: CD přehrávač a D/A převodník</a></p>
             </body>
           </html>
           EOL
