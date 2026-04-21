@@ -121,6 +121,14 @@
     \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{grafy/graf1.pdf}
+    \caption{Modulová kmitočtová charakteristika měřených korekcí zesilovače.}
+\end{figure}
+
+Lomové frekvence korekce RIAA: $\quad f_1 = 50\,\mathrm{Hz}, \quad f_2 = 500\,\mathrm{Hz}, \quad f_3 = 2,12\,\mathrm{kHz}$
+
 \subsection{Měření vstupní impedance přípravku}
 
 \begin{table}[H]
@@ -140,8 +148,6 @@
 \subsection{Měření přebuditelnosti přípravku}
 
 Jmenovité napětí zařízení je $U_{2\mathrm{jmen}} = 1\,\mathrm{V}$.
-
-
 
 \begin{equation}
     P_\mathrm{OZ} = \textcolor{teal}{20 \cdot \log \frac{U_{2\mathrm{lim}}}{U_{2\mathrm{jmen}}}} = 20 \cdot \log \frac{10{,}2}{1} = \underline{\underline{20{,}17\,\mathrm{dB}}}
@@ -176,6 +182,12 @@ Přebuditelnost $\quad P_{\mathrm{OZ}} = 20,17\,\mathrm{dB}, \quad P_{\mathrm{DP
     \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{grafy/graf2.pdf}
+    \caption{Závislost harmonického zkreslení na vstupním napětí.}
+\end{figure}
+
 \section{Použité měřící přístroje}
 
 \begin{itemize}
@@ -189,5 +201,31 @@ Přebuditelnost $\quad P_{\mathrm{OZ}} = 20,17\,\mathrm{dB}, \quad P_{\mathrm{DP
 \end{itemize}
 
 \section{Závěr}
+
+Měřením skutečné citlivosti přípravku bylo ověřeno, že zapojení s operačním zesilovačem se blíží nastavené citlivosti přesněji než zapojení s diskrétními prvky.
+Nejpřesnějšího nastavení bylo v obou případech dosaženo pro citlivost 100\,mV, kdy OZ vykazovalo $U_1 = 100$\,mV a DP $U_1 = 94$\,mV.
+
+Modulová kmitočtová charakteristika obou zesilovačů je v pracovním pásmu přibližně rovná s hodnotou kolem 20\,dB.
+U zapojení OZ bylo naměřeno zesílení 19,77\,dB při 20\,Hz a 17,13\,dB při 20\,kHz, přičemž pokles na vyšších kmitočtech je způsoben omezením šířky pásma.
+U zapojení DP bylo naměřeno zesílení 18,34\,dB při 20\,Hz a 18,84\,dB při 20\,kHz, tedy pokles na nízkých kmitočtech je u DP výraznější než u vysokých.
+
+Z modulové kmitočtové charakteristiky frekvenčních korekcí je patrné, že všechny průběhy se přibližují hodnotě 20\,dB v oblasti 1\,kHz.
+Korekce RIAA dosahuje při 20\,Hz zesílení 39,19\,dB a při 20\,kHz útlumu -$2{,}23$\,dB.
+Z průběhu byly odečteny lomové frekvence korekce RIAA: $f_1 = 50$\,Hz, $f_2 = 500$\,Hz a $f_3 = 2{,}12$\,kHz, které odpovídají předpokládaným hodnotám z přednášek.
+Fyziologická korekce dosahuje při 20\,kHz nejvyššího zesílení 36,90\,dB.
+Korekce zdůraznění řeči vykazuje při nízkých kmitočtech výrazný útlum, například -$12{,}51$\,dB při 20\,Hz, a maxima kolem 3\,kHz s hodnotou 26,32\,dB.
+Rock preset se pohybuje v celém měřeném pásmu v úzkém rozsahu přibližně 15 až 20\,dB s minimálními odchylkami.
+
+Vstupní impedance přípravku byla změřena jako 10\,k$\Omega$ pro OZ a 9\,k$\Omega$ pro DP, obě hodnoty jsou si blízké.
+
+Výstupní limitní napětí OZ bylo naměřeno $U_{2\mathrm{lim}} = 10{,}2$\,V, což odpovídá přebuditelnosti $P_\mathrm{OZ} = 20{,}17$\,dB.
+Výstupní limitní napětí DP bylo naměřeno $U_{2\mathrm{lim}} = 3{,}52$\,V, což odpovídá přebuditelnosti $P_\mathrm{DP} = 10{,}93$\,dB.
+Zapojení s OZ tedy umožňuje výrazně vyšší výstupní úrovně bez zkreslení než zapojení s diskrétními prvky.
+
+U OZ bylo při výstupním napětí 1\,V naměřeno THD+N pouze 0,122\,\%, zatímco u DP bylo při blízkém výstupu 802\,mV naměřeno 0,408\,\%.
+THD+N  roste, přibližením signálu limitaci, neboť dochází k nelineárnímu ořezu průběhu a vzniku vyšších harmonických složek.
+U DP bylo při $U_1 = 500$\,mV naměřeno THD+N 19,5\,\%, u OZ pak při $U_1 = 1500$\,mV hodnota 16,6\,\%.
+Rovněž při velmi malých napětích může být THD+N zdánlivě vyšší vlivem toho, že šum tvoří nezanedbatelnou část naměřeného signálu.
+Z výsledků vyplývá, že zapojení s operačním zesilovačem dosahuje ve všech měřených bodech nižšího harmonického zkreslení.
 
 \end{document}
