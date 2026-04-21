@@ -22,6 +22,7 @@
 \usepackage{colortbl}
 \usepackage{framed} % \begin{framed}
 \usepackage{setspace} % \setstretch{}
+\usepackage{xcolor}
 
 \begin{document}
 
@@ -52,6 +53,10 @@
 \end{table}
 
 \subsection{Měření modulové kmitočtové charakteristiky zesílení OZ a DP}
+
+\begin{equation}
+    A_\mathrm{U} = \textcolor{teal}{20 \cdot \log \frac{U_2}{U_1}} = 20 \cdot \log \frac{974}{100} = \underline{\underline{19{,}77\,\mathrm{dB}}}
+\end{equation}
 
 \begin{table}[H]
     \centering
@@ -134,12 +139,24 @@
 
 \subsection{Měření přebuditelnosti přípravku}
 
+Jmenovité napětí zařízení je $U_{2\mathrm{jmen}} = 1\,\mathrm{V}$.
+
+
+
+\begin{equation}
+    P_\mathrm{OZ} = \textcolor{teal}{20 \cdot \log \frac{U_{2\mathrm{lim}}}{U_{2\mathrm{jmen}}}} = 20 \cdot \log \frac{10{,}2}{1} = \underline{\underline{20{,}17\,\mathrm{dB}}}
+\end{equation}
+
+Výstupní limitní napětí $\quad U_{2\mathrm{lim\,OZ}} = 10,2\,\mathrm{V}, \quad U_{2\mathrm{lim\,DP}} = 3,52\,\mathrm{V}$
+
+Přebuditelnost $\quad P_{\mathrm{OZ}} = 20,17\,\mathrm{dB}, \quad P_{\mathrm{DP}} = 10,93\,\mathrm{dB}$
+
 \subsection{Měření harmonického zkreslení vstupního zesilovače}
 
 \begin{table}[H]
     \centering
     \catcode`\-=12
-    \caption{Harmonické zkreslení vstupního zesilovače (vstupní citlivost 100\,mV).}
+    \caption{Harmonické zkreslení vstupního zesilovače ($f = 1$\,kHz, Citlivost 100\,mV).}
     \begin{tabular}{cccccc}
         \toprule
         Zesílení & $U_1$ [mV] & $U_2$ [mV] & $k_2$ [\%] & $k_3$ [\%] & THD+N [\%] \\
